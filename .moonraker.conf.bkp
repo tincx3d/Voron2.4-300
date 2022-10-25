@@ -1,16 +1,10 @@
 [server]
 host = 0.0.0.0
 port = 7125
-enable_debug_logging = False
 klippy_uds_address = /tmp/klippy_uds
 
 [file_manager]
-config_path = ~/klipper_config
-log_path = ~/klipper_logs
 enable_object_processing = True
-
-[database]
-database_path = ~/.moonraker_database
 
 [authorization]
 trusted_clients = 
@@ -22,7 +16,6 @@ cors_domains =
 	*.lan
 	*.local
 	*://my.mainsail.xyz
-	*://app.fluidd.xyz
 
 [octoprint_compat]
 
@@ -40,22 +33,6 @@ type = git_repo
 path = /home/pi/klipper_z_calibration
 origin = https://github.com/protoloft/klipper_z_calibration.git
 install_script = install.sh
-
-[update_manager moonraker-obico]
-type = git_repo
-path = ~/moonraker-obico
-origin = https://github.com/TheSpaghettiDetective/moonraker-obico.git
-env = /home/pi/moonraker-env/bin/python
-requirements = requirements.txt
-install_script = install.sh
-managed_services = 
-	moonraker-obico
-
-[update_manager fluidd]
-type = web
-channel = stable
-repo = fluidd-core/fluidd
-path = ~/fluidd
 
 [update_manager led_effect]
 type = git_repo
